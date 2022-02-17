@@ -1,5 +1,7 @@
-from anki_export import ApkgReader
-import pyexcel_xlsxwx
+import zipfile
 
-with ApkgReader('test.apkg') as apkg: 
-    pyexcel_xlsxwx.save_data('test.xlsx', apkg.export, config={'format': None})
+zf = zipfile.ZipFile('english.apkg')
+file = zf.open('collection.anki21')
+
+# print(file.read)
+print("funciono")
